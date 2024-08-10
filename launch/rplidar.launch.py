@@ -9,7 +9,7 @@ from launch.actions import LogInfo
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 
-
+print('Please Wait; Connecting to RPLidar....')
 def generate_launch_description():
     channel_type =  LaunchConfiguration('channel_type', default='serial')
     serial_port = LaunchConfiguration('serial_port', default='/dev/serial/by-path/platform-fd500000.pcie-pci-0000:01:00.0-usb-0:1.3:1.0-port0')
@@ -82,3 +82,4 @@ def generate_launch_description():
             arguments=['-d', rviz_config_dir],
             output='screen'),
     ])
+print('RPLidar Connection Established; Publishing on /scan topic')
